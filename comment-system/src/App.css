@@ -1,22 +1,24 @@
+/* General App Styles */
 .App {
   font-family: 'Arial', sans-serif;
-  max-width: 700px;
-  margin: 0 auto;
-  background-color: #f7f7f7;
+  max-width: 800px; /* Adjusted width for better alignment */
+  margin: 20px auto;
+  background-color: #f0f2f5;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styles */
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #4285F4;
-  border-radius: 8px;
+  padding: 15px 20px; /* Adjusted padding */
+  background-color: #2d88ff;
+  border-radius: 10px;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increased bottom margin for spacing */
 }
 
 .header-user-info {
@@ -25,45 +27,126 @@
 }
 
 .header-user-img {
-  width: 40px;
-  height: 40px;
+  width: 50px; /* Adjusted size */
+  height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 15px; /* Increased margin for spacing */
 }
 
 .welcome-message {
-  margin-right: 20px;
+  margin-right: 25px;
   font-weight: bold;
+  font-size: 1.2em; /* Increased font size */
 }
 
 .auth-button {
-  background-color: #f44336;
+  background-color: #ff5252; /* Changed to a slightly different red shade */
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 25px; /* Adjusted padding */
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 1em; /* Adjusted font size */
   transition: background-color 0.3s ease;
 }
 
 .auth-button:hover {
-  background-color: #d32f2f;
+  background-color: #e53935;
 }
 
+/* Comment Section Styles */
 .comment-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comment-input {
   margin-bottom: 20px;
 }
 
+/* Before Login Styles */
 .before-login p {
   margin: 16px 0;
   text-align: center;
   font-weight: bold;
-  color: #555;
+  font-size: 1.1em; /* Adjusted font size */
+  color: #666666; /* Changed to a slightly lighter shade */
+}
+
+/* CommentList Component Styles */
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  margin-left: 20px;
+  margin-right: 20px; /* Added margin-right */
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+}
+
+.comment-author img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.comment-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-text {
+  margin: 10px 0;
+  font-size: 1em; /* Adjusted font size */
+}
+
+.comment-file img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px; /* Added border radius for consistency */
+}
+
+.replies {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.comment-input {
+  margin-top: 10px;
+}
+
+.comment-input textarea {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.comment-input button {
+  align-self: flex-end;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-input button:hover {
+  background-color: #0056b3;
 }

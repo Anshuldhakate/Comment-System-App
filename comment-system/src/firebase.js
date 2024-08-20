@@ -1,4 +1,4 @@
-// src/firebase.js
+
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -15,10 +15,10 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// Use default import to ensure that GoogleAuthProvider is accessible
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const storage = firebase.storage();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-export { auth, firestore, storage, googleProvider };
+export { auth, firestore, storage, googleProvider, firebase };
