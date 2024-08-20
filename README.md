@@ -4,6 +4,11 @@
 
 This is a comment system application built with React, Firebase, and ReactQuill. Users can sign in with Google, post comments, reply to comments, and upload files. The application uses Firestore for storing comments and Firebase Storage for file attachments.
 
+<br/>
+<img width="229" alt="Screenshot 2024-08-20 215935" src="https://github.com/user-attachments/assets/81cf2dc2-2be9-42f8-8ec7-54699e2fccc0">
+
+<br/>
+
 ## Features
 
 - Google Authentication: Sign in with Google to access the comment system.
