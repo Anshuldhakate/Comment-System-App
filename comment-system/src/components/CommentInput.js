@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useAuth } from '../contexts/AuthContext';
-import { firestore, storage } from '../firebase';
+import { storage } from '../firebase';
 import './CommentInput.css';
 
 function CommentInput({ onCommentSubmit, parentId }) {

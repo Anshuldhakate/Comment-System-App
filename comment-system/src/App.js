@@ -23,14 +23,20 @@ function App() {
   }, []);
 
   const handleCommentSubmit = (comment, parentId = null) => {
+    const addReply = (comments) => {
+      return comments.map(c => {
+        if (c.id === parentId) {
+          return { ...c, replies: [comment, ...(c.replies || [])] };
+        }
+        if (c.replies) {
+          return { ...c, replies: addReply(c.replies) };
+        }
+        return c;
+      });
+    };
+  
     if (parentId) {
-      setComments(prevComments => 
-        prevComments.map(c => 
-          c.id === parentId 
-            ? { ...c, replies: [comment, ...(c.replies || [])] } 
-            : c
-        )
-      );
+      setComments(prevComments => addReply(prevComments));
     } else {
       setComments([comment, ...comments]);
     }
