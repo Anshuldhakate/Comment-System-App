@@ -34,13 +34,7 @@ function CommentInput({ onCommentSubmit, parentId }) {
     };
 
     try {
-      if (parentId) {
-        // Add reply
-        onCommentSubmit(newComment, parentId);
-      } else {
-        // Add new comment
-        onCommentSubmit(newComment);
-      }
+      onCommentSubmit(newComment, parentId);
       setCommentText('');
       setFile(null);
     } catch (error) {

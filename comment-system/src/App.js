@@ -3,6 +3,8 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import CommentInput from './components/CommentInput';
 import CommentList from './components/CommentList';
 import { firestore } from './firebase';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 import './App.css';
 
 function App() {
@@ -22,23 +24,23 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  const handleCommentSubmit = (comment, parentId = null) => {
-    const addReply = (comments) => {
-      return comments.map(c => {
-        if (c.id === parentId) {
-          return { ...c, replies: [comment, ...(c.replies || [])] };
-        }
-        if (c.replies) {
-          return { ...c, replies: addReply(c.replies) };
-        }
-        return c;
-      });
-    };
-  
-    if (parentId) {
-      setComments(prevComments => addReply(prevComments));
-    } else {
-      setComments([comment, ...comments]);
+  const handleCommentSubmit = async (comment, parentId = null) => {
+    try {
+      const commentsRef = firestore.collection('comments');
+
+      if (parentId) {
+        const parentCommentRef = commentsRef.doc(parentId);
+        await parentCommentRef.update({
+          replies: firebase.firestore.FieldValue.arrayUnion(comment)
+        });
+      } else {
+        await commentsRef.add({
+          ...comment,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+      }
+    } catch (error) {
+      console.error('Error adding comment: ', error);
     }
   };
 

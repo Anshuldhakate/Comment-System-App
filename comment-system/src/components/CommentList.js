@@ -10,7 +10,7 @@ function CommentList({ comments, onCommentSubmit }) {
   };
 
   const renderComments = (comments, level = 0) => {
-    if (level > 2) return null; // Limit to 2 levels deep
+    if (level > 2) return null; 
   
     return (
       <div className={`comment-list level-${level}`}>
@@ -68,6 +68,3 @@ function CommentList({ comments, onCommentSubmit }) {
 }
 
 export default CommentList;
-
-
-
