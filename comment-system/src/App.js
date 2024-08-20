@@ -6,10 +6,13 @@ import { firestore } from './firebase';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import './App.css';
+import Pagination from './components/Pagination';
 
 function App() {
   const { user, signInWithGoogle, signOut } = useAuth();
   const [comments, setComments] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const commentsPerPage = 8;
 
   useEffect(() => {
     const unsubscribe = firestore.collection('comments').orderBy('timestamp', 'desc')
@@ -44,6 +47,13 @@ function App() {
     }
   };
 
+  // Get the comments for the current page
+  const indexOfLastComment = currentPage * commentsPerPage;
+  const indexOfFirstComment = indexOfLastComment - commentsPerPage;
+  const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <AuthProvider>
       <div className="App">
@@ -63,7 +73,13 @@ function App() {
           {user ? (
             <>
               <CommentInput onCommentSubmit={handleCommentSubmit} />
-              <CommentList comments={comments} onCommentSubmit={handleCommentSubmit} />
+              <CommentList comments={currentComments} onCommentSubmit={handleCommentSubmit} />
+              <Pagination
+                commentsPerPage={commentsPerPage}
+                totalComments={comments.length}
+                paginate={paginate}
+                currentPage={currentPage}
+              />
             </>
           ) : (
             <div className="before-login">
