@@ -5,7 +5,7 @@ https://unrivaled-hamster-02dee6.netlify.app
 
 ## Description
 
-This is a comment system application built with React, Firebase, and ReactQuill. Users can sign in with Google, post comments, reply to comments, and upload files. The application uses Firestore for storing comments and Firebase Storage for file attachments.
+This comment system application was built with React, Firebase, and ReactQuill. Users can sign in with Google, post comments, reply to comments, and upload files. The application uses Firestore to store comments and Firebase Storage to store file attachments.
 
 <br/>
 <img width="229" alt="Screenshot 2024-08-20 215935" src="https://github.com/user-attachments/assets/81cf2dc2-2be9-42f8-8ec7-54699e2fccc0">
@@ -18,7 +18,7 @@ This is a comment system application built with React, Firebase, and ReactQuill.
 - Commenting: Post new comments with rich text support using ReactQuill.
 - Replies: Reply to comments, with nested replies up to two levels.
 - File Attachments: Upload and attach files (e.g., images) to comments.
-- Live Updates: Real-time comment updates using Firestore.
+- Live Updates: Real-time comment updates are available using Firestore.
 - Responsive Design: Fully responsive UI for seamless use across devices.
 
 ## Technologies Used
