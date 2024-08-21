@@ -39,7 +39,7 @@ This is a comment system application built with React, Firebase, and ReactQuill.
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
+    git clone https://github.com/Anshuldhakate/Comment-System-App.git
     cd your-repo-name
     ```
 
